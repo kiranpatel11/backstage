@@ -1,5 +1,30 @@
 # @backstage/plugin-techdocs
 
+## 0.5.5
+
+### Patch Changes
+
+- e44925723: `techdocs.requestUrl` and `techdocs.storageUrl` are now optional configs and the discovery API will be used to get the URL where techdocs plugin is hosted.
+- 019fe39a0: Switch dependency from `@backstage/plugin-catalog` to `@backstage/plugin-catalog-react`.
+- Updated dependencies [c777df180]
+- Updated dependencies [12ece98cd]
+- Updated dependencies [d82246867]
+- Updated dependencies [7fc89bae2]
+- Updated dependencies [c810082ae]
+- Updated dependencies [6e612ce25]
+- Updated dependencies [e44925723]
+- Updated dependencies [025e122c3]
+- Updated dependencies [21e624ba9]
+- Updated dependencies [da9f53c60]
+- Updated dependencies [32c95605f]
+- Updated dependencies [7881f2117]
+- Updated dependencies [f0320190d]
+  - @backstage/techdocs-common@0.3.7
+  - @backstage/core@0.6.0
+  - @backstage/plugin-catalog-react@0.0.2
+  - @backstage/theme@0.2.3
+  - @backstage/catalog-model@0.7.1
+
 ## 0.5.4
 
 ### Patch Changes

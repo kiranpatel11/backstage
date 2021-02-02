@@ -1,5 +1,22 @@
 # @backstage/plugin-cost-insights
 
+## 0.8.0
+
+### Minor Changes
+
+- 19172f5a9: add alert hooks
+
+### Patch Changes
+
+- Updated dependencies [12ece98cd]
+- Updated dependencies [d82246867]
+- Updated dependencies [c810082ae]
+- Updated dependencies [21e624ba9]
+- Updated dependencies [da9f53c60]
+- Updated dependencies [32c95605f]
+  - @backstage/core@0.6.0
+  - @backstage/theme@0.2.3
+
 ## 0.7.0
 
 ### Minor Changes
