@@ -42,4 +42,34 @@ export class AzureIntegration implements ScmIntegration {
   get config(): AzureIntegrationConfig {
     return this.integrationConfig;
   }
+
+  /*
+   * Azure repo URLs on the form with a `path` query param are treated specially.
+   *
+   * Example base URL: https://dev.azure.com/organization/project/_git/repository?path=%2Fcatalog-info.yaml
+   */
+  resolveUrl(options: { url: string; base: string }): string {
+    const { url, base } = options;
+
+    // If we can parse the url, it is absolute - then return it verbatim
+    try {
+      // eslint-disable-next-line no-new
+      new URL(url);
+      return url;
+    } catch {
+      // Ignore intentionally - looks like a relative path
+    }
+
+    const parsed = new URL(base);
+    const path = parsed.searchParams.get('path');
+    if (!path || !path.startsWith('/')) {
+      return new URL(url, base).toString();
+    }
+
+    const mockBaseUrl = new URL(`https://a.com${path}`);
+    const updatedPath = new URL(url, mockBaseUrl).pathname;
+
+    parsed.searchParams.set('path', updatedPath);
+    return parsed.toString();
+  }
 }
